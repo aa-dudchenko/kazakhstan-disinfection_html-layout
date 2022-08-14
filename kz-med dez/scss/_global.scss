@@ -1,0 +1,18 @@
+body {
+  min-width: 480px;
+  overflow-x: hidden;
+  position: relative;
+
+  font-family: 'Roboto', sans-serif;
+  color: $mainColor;
+  font-size: 14px;
+  font-weight: 300;
+
+  @include response-prop('padding-bottom', 210, 40);
+}
+
+.container {
+  max-width: 1254px; //  1188 - ширина контейнера главной страницы из макета
+  padding: 0 33px;
+  margin: 0 auto;
+}

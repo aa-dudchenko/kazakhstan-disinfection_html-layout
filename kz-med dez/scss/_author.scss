@@ -1,0 +1,114 @@
+//  стили страницы "автор"
+.author-container {
+  max-width: 882px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+.author-header {
+  background: linear-gradient(270deg, #3BACED 0%, #145F99 100%);
+  height: 268px;
+
+  @media(max-width: 768px) {
+    height: 420px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 53px;
+
+    position: relative;
+    top: 63px;
+
+    @media(max-width: 768px) {
+      flex-direction: column;
+      top: 48px;
+      gap: 27px;
+    }
+  }
+
+  &__image {
+    width: 259px;
+    height: 259px;
+    border-radius: 50%;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+
+.author-info {
+  @include response-prop("margin-top", 94, 72);
+
+  &__text {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 23px;
+    color: $mainColor;
+    max-width: 746px;
+    margin-top: 30px;
+  }
+}
+
+.author-cards {
+  @include response-prop("margin-top", 94, 72);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 54px;
+
+    @media(max-width:860px) {
+      flex-direction: column;
+      gap: 36px;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    width: 412px;
+    height: 420px;
+    overflow: hidden;
+
+    position: relative;
+  }
+
+  &__card-text-inner {
+    padding: 21px 13px 0 28px;
+  }
+
+  &__card-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+  }
+
+  &__card-text {
+    margin-top: 22px;
+  }
+
+  &__card-link-next {
+    position: absolute;
+    bottom: 246px;
+
+    font-weight: 500;
+    color: $colorBlueLight;
+    cursor: pointer;
+  }
+
+  &__card__image {
+    width: 412px;
+    height: 234px;
+  }
+
+}
+// -------------------------------

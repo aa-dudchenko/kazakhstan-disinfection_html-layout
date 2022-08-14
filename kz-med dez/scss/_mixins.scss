@@ -1,0 +1,14 @@
+//  адаптивное свойство
+//  принимает параметры: 
+//    1) само свойство (например margin)
+//    2) значение из десктопа макета
+//    3) значение из моб-версии макета
+//    (доп. параметры): - размер контейнера из десктопа, - размер полотна мобильной версии. (по умолчанию равны значениям из макета)
+//  миксин устанавливает какому-либо свойству значения - строго соотвествующие значениям десктопа и мобилки из макета, а между ними пропорционально резинится.
+@mixin response-prop($property, $startSize, $minSize, $containerWidth: $maxWidthContainer, $smallerWidth: $mobileWidth) {
+  $intermediate-value: $startSize - $minSize;
+  #{$property}: $startSize + px;
+  @media (max-width: #{$containerWidth + px}) {
+    #{$property}: calc(  #{$minSize + px} + #{$intermediate-value} * ( (100vw - #{$smallerWidth + px}) / (#{$containerWidth - $smallerWidth}) )  )
+  }
+}

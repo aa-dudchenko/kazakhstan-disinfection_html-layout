@@ -1,0 +1,18 @@
+//  ширина контейнера и мобилки из макета
+$maxWidthContainer: 1188;
+$mobileWidth: 480;
+
+//  основные цвета используемые на сайте
+$mainColor: #252525;
+$colorBlue: #145F99;
+$colorBlueLight: #3BACED;
+$colorWhite: #fff;
+
+//  цвета фона текстовых блоков в статье
+$yellow-bg: rgba(255, 184, 0, 0.1);
+$red-bg: rgba(255, 0, 0, 0.1);
+$green-bg: rgba(0, 255, 25, 0.1);
+
+//  margin
+$mrgBig: 180; //  без (px) для исп. в адаптивном миксине
+$mrgMini: 115;

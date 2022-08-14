@@ -1,0 +1,361 @@
+//  стили главной страницы
+.header {
+  padding: 10px 0 25px 0;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+  }
+
+  &__logo img {
+    width: 115px;
+    height: 115px;
+
+    @media (max-width: 480px) {
+      width: 90px;
+      height: 90px;
+    }
+  }
+
+  &__nav {}
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 24px
+  }
+
+  &__nav-item {}
+
+  &__nav-link {
+    color: $colorBlue;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    &:hover {
+      border-bottom: 1px solid $colorBlue;
+    }
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__user-search {
+    position: relative;
+    height: 32px;
+    display: flex;
+
+    input {
+      height: 100%;
+      width: 80px;
+      border: none;
+      border-bottom: 2px solid transparent;
+      outline: none;
+      background: transparent;
+      transition: all .3s;
+      position: relative;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      padding-left: 27px;
+    }
+
+    input:focus {
+      width: 100px;
+      z-index: 1;
+      border-bottom: 2px solid #F9F0DA;
+    }
+
+    input::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      color: $colorBlue;
+
+    }
+
+    button {
+      background: inherit;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      top: 6px;
+      padding: 0;
+    }
+
+    button:before {
+      content: url('../images/SVG/basic-svg/search.svg');
+    }
+  }
+
+  &__phone {
+    position: absolute;
+    top: 13px;
+    right: 33px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: $colorBlueLight
+  }
+
+  @media(max-width: 1160px) {
+    &__nav-list {
+      gap: 15px;
+    }
+
+    &__nav-link {
+      font-size: 14px;
+    }
+  }
+
+  @media(max-width: 992px) {
+
+    padding-top: 40px;
+
+    &__nav {
+      display: none;
+    }
+
+    &__phone {
+      position: static;
+
+      span {
+        display: none;
+      }
+
+      a {
+        display: block;
+        color: $colorBlue;
+      }
+    }
+
+    &__user-search {
+      position: absolute;
+      top: -30px;
+      left: 22px;
+
+      input {
+        width: 15px;
+      }
+
+      input::placeholder {
+        color: $colorWhite;
+      }
+    }
+
+    &__user-basket {
+      position: absolute;
+      top: -27px;
+      left: 50%;
+      transform: translate(-50%, 0%);
+    }
+
+    .mob-menu {
+      position: absolute;
+      top: -25px;
+      right: 18px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      width: 24px;
+      height: 16px;
+      cursor: pointer;
+
+      span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: $colorBlue;
+        border-radius: 1px;
+      }
+    }
+
+  }
+
+}
+
+.about-top {
+  background-image: url('../images/BACKGROUNDS/about-bg.jpg');
+  background-size: cover;
+  height: 500px;
+
+  &__title {
+    padding-top: 60px;
+    font-weight: 700;
+    font-size: 36px;
+    @include response-prop("font-size", 36, 32);
+    @include response-prop("line-height", 42, 38);
+    color: $colorWhite;
+  }
+
+  &__subtitle {
+    @include response-prop("margin-top", 33, 24);
+    font-weight: 700;
+    @include response-prop("font-size", 20, 23);
+    color: $colorWhite;
+  }
+
+  &__text {
+    margin-top: 7px;
+    font-weight: 700;
+    @include response-prop("font-size", 14, 13);
+    @include response-prop("line-height", 16, 15);
+    color: $colorWhite;
+  }
+
+  &__installment {
+    @include response-prop("margin-top", 40, 27);
+  }
+
+  &__btn {
+    @include response-prop("margin-top", 55, 27);
+    @include response-prop("width", 240, 213);
+  }
+}
+
+.about-bottom {
+  padding-top: 101px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 860px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__item-title {
+    margin-top: 29px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: $colorBlue
+  }
+
+  &__item-text {
+    margin-top: 29px;
+    text-align: center;
+    max-width: 230px;
+  }
+}
+
+.services {
+  @include response-prop("margin-top", $mrgBig, $mrgMini);
+
+  &__title {
+    text-align: center;
+  }
+
+  &__items {
+    margin-top: 50px;
+    min-height: 540px;
+    background: rgba(20, 95, 153, 0.1);
+    padding: 60px;
+    border-radius: 8px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 85px 15px;
+
+    @media(max-width: 860px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 39px 15px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__item-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  &__item-text {
+    margin-top: 33px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    color: $colorBlueLight
+  }
+
+}
+
+.differences {
+  @include response-prop("margin-top", $mrgBig, $mrgMini);
+
+  //  в десктопе макета у данной секции свой контейнер (более узкий)
+  &__container {
+    max-width: 1260px;
+    padding: 0 130px;
+    margin: 0 auto;
+
+    @media(max-width: 860px) {
+      padding: 0 33px;
+    }
+  }
+
+  &__items {
+    @include response-prop("margin-top", 100, 60);
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 85px 40px;
+
+    @media(max-width: 860px) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 35px;
+    }
+  }
+
+  &__item {
+    max-width: 380px;
+
+    @media(max-width: 860px) and (min-width: 540px) {
+      max-width: 100%;
+    }
+  }
+
+  &__item-title {
+    font-weight: 700;
+    font-size: 20px;
+    color: $colorBlueLight
+  }
+
+  &__item-text {
+    margin-top: 11px;
+  }
+
+}
+// -------------------------------

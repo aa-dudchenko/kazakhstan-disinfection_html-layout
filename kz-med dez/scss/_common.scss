@@ -1,0 +1,34 @@
+.title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 38px;
+  color: $colorBlue;
+}
+
+.text-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 16px;
+  color: $mainColor;
+}
+
+.btn {
+  cursor: pointer;
+  width: 240px;
+  height: 43px;
+  background-color: $colorBlueLight;
+  font-weight: 700;
+  font-size: 16px;
+  color: $colorWhite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px rgba(59, 172, 237, 0.5);
+  border-radius: 8px;
+}
